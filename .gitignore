@@ -1,0 +1,11 @@
+# modules
+node_modules
+
+# editors
+.idea
+
+# logs
+npm-debug.log
+
+# production env file
+*.env
