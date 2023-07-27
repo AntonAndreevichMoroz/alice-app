@@ -15,36 +15,18 @@ const mk1 = new Mikrotik(
   process.env.MK1_LOGIN,
   process.env.MK1_PASS
 )
-const mk2 = new Mikrotik(
-  process.env.MK2_IP,
-  process.env.MK2_PORT,
-  process.env.MK2_LOGIN,
-  process.env.MK2_PASS
-)
-const mk3 = new Mikrotik(
-  process.env.MK3_IP,
-  process.env.MK3_PORT,
-  process.env.MK3_LOGIN,
-  process.env.MK3_PASS
-)
-const mk4 = new Mikrotik(
-  process.env.MK4_IP,
-  process.env.MK4_PORT,
-  process.env.MK4_LOGIN,
-  process.env.MK4_PASS
-)
-const mk5 = new Mikrotik(
-  process.env.MK5_IP,
-  process.env.MK5_PORT,
-  process.env.MK5_LOGIN,
-  process.env.MK5_PASS
-)
-const mk6 = new Mikrotik(
-  process.env.MK6_IP,
-  process.env.MK6_PORT,
-  process.env.MK6_LOGIN,
-  process.env.MK6_PASS
-)
+// const mk2 = new Mikrotik(
+//   process.env.MK2_IP,
+//   process.env.MK2_PORT,
+//   process.env.MK2_LOGIN,
+//   process.env.MK2_PASS
+// )
+// const mk3 = new Mikrotik(
+//   process.env.MK3_IP,
+//   process.env.MK3_PORT,
+//   process.env.MK3_LOGIN,
+//   process.env.MK3_PASS
+// )
 
 export default function (req) {
   return req ? executeCommand(req) : welcome()
@@ -60,12 +42,9 @@ async function welcome () {
 }
 
 async function updateAll () {
-  await mk3.update()
-  await mk2.update()
-  await mk6.update()
-  await mk5.update()
-  await mk4.update()
   await mk1.update()
+  // await mk3.update()
+  // await mk2.update()
 }
 
 async function executeCommand (req) {
